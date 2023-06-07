@@ -1,0 +1,29 @@
+version: "3.5"
+
+services:
+
+  tron-client:
+    image: tron
+    container_name: tron
+    hostname: tron
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./data/:/home/dockeruser/output-directory
+      - ./logs/:/home/dockeruser/logs
+    ports:
+      - 50545:50545
+      - 50555:50555
+    networks:
+      - graphsense-net
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "2"
+        max-size: "1024m"
+
+networks:
+  graphsense-net:
+    name: graphsense-global-net
