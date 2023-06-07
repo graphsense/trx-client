@@ -1,6 +1,6 @@
 # Tron Docker container
 
-A Docker container running [Tron][bitcoin] as a service and exposing
+A Docker container running [Tron][tron] as a service and exposing
 the REST API.
 
 ## Prerequisites
@@ -53,4 +53,3 @@ Showing log information:
 
 [tron]: https://tron.network/
 [docker]: https://www.docker.com
-[bitcoin-conf]: https://en.bitcoin.it/wiki/Running_Bitcoin#Bitcoin.conf_Configuration_File
