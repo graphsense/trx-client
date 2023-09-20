@@ -3,10 +3,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [23.06/1.2.0] - 2023-09-15
+## [23.09/1.2.0] - 2023-09-15
 ### Changed
 - enable save internal tx option
-
 
 ## [23.06/1.1.0] - 2023-09-15
 ### Changed
