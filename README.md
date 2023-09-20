@@ -28,7 +28,7 @@ a Docker Compose override file can be used, e.g.
 version: "3.1"
 
 services:
-  bitcoin-client:
+  tron-client:
     volumes:
       - /var/data/graphsense/clients/btc:/home/dockeruser/output-directory
       - /var/data/graphsense/clients/btc:/home/dockeruser/logs
