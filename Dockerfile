@@ -1,5 +1,9 @@
 FROM eclipse-temurin:8
-LABEL maintainer="contact@iknaio.com"
+LABEL org.opencontainers.image.title="trx-client"
+LABEL org.opencontainers.image.maintainer="contact@ikna.io"
+LABEL org.opencontainers.image.url="https://www.ikna.io/"
+LABEL org.opencontainers.image.description="Dockerized Tron client"
+LABEL org.opencontainers.image.source="https://github.com/graphsense/trx-client"
 
 ENV TZ=UTC
 ARG UID=10000
