@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [23.09/1.2.2] - 2023-12-18
+### Changed
+- set vm.supportConstant = true in main_net_config.conf
+- bump version v4.7.2 -> v4.7.3
+
 ## [23.09/1.2.1] - 2023-09-20
 ### Changed
 - setup automatic docker file publish on github packages

@@ -15,7 +15,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
         libgoogle-perftools4 \
         wget && \
     useradd -m -r -u $UID -d /home/dockeruser dockeruser
-RUN wget https://github.com/tronprotocol/java-tron/releases/download/GreatVoyage-v4.7.2/FullNode.jar -O /home/dockeruser/FullNode.jar && \
+RUN wget https://github.com/tronprotocol/java-tron/releases/download/GreatVoyage-v4.7.3/FullNode.jar -O /home/dockeruser/FullNode.jar && \
     chown dockeruser:dockeruser /home/dockeruser/FullNode.jar
 
 USER dockeruser
