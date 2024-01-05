@@ -10,8 +10,9 @@ services:
       context: .
       dockerfile: ./Dockerfile
     volumes:
-      - ./data/:/home/dockeruser/output-directory
-      - ./logs/:/home/dockeruser/logs
+      - ./data/:/opt/graphsense/data:Z
+      - ./conf/main_net_config.conf:/opt/graphsense/client2.conf:Z
+      - ./logs/:/home/dockeruser/logs:Z
     ports:
       - 50545:50545
       - 50555:50555

@@ -14,15 +14,17 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     apt-get install --no-install-recommends -y \
         libgoogle-perftools4 \
         wget && \
-    useradd -m -r -u $UID -d /home/dockeruser dockeruser
+    useradd -m -r -u $UID -d /home/dockeruser dockeruser &&  \
+    mkdir -p /opt/graphsense/data && \
+    chown -R dockeruser /opt/graphsense
 RUN wget https://github.com/tronprotocol/java-tron/releases/download/GreatVoyage-v4.7.3/FullNode.jar -O /home/dockeruser/FullNode.jar && \
     chown dockeruser:dockeruser /home/dockeruser/FullNode.jar
 
 USER dockeruser
 ENV LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libtcmalloc.so.4"
 ENV TCMALLOC_RELEASE_RATE=10
-ADD conf/main_net_config.conf /home/dockeruser/main_net_config.conf
-ADD logback.xml /home/dockeruser/logback.xml
+ADD conf/main_net_config.conf /opt/graphsense/client.conf
+ADD logback.xml /opt/graphsense/logback.xml
 WORKDIR /home/dockeruser
 
-CMD ["java", "-Xmx24g", "-XX:+UseConcMarkSweepGC", "-jar", "FullNode.jar", "-c", "main_net_config.conf", "--log-config", "logback.xml"]
+CMD ["java", "-Xmx24g", "-XX:+UseConcMarkSweepGC", "-jar", "FullNode.jar", "-c", "/opt/graphsense/client.conf", "--output-directory", "/opt/graphsense/data", "--log-config", "/opt/graphsense/logback.xml"]
