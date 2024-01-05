@@ -12,9 +12,6 @@ jobs:
   release:
     name: Release pushed tag
     runs-on: ubuntu-latest
-    env:
-      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-    if: startsWith(env.BRANCH_NAME, 'master')
     steps:
       - name: Create release
         env:
