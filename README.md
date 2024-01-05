@@ -12,13 +12,13 @@ Ensure that a user `dockeruser` with ID `10000` exists on your local system.
 
 ## Configuration
 
-A default config file for the client is provide in `conf/main_net_config.conf` according to your environment.
-By default the conf file is copied into the container at /home/dockeruser/main_net_config.conf.
+A default config file for the client is provided in `conf/main_net_config.conf` according to your environment.
+By default the conf file is copied into the container at /opt/graphsense/client.conf.
 
 Client data is persisted on the host machine using a Docker volume.
 In the default setting the local directory `./data` is mapped to
-to `/home/dockeruser/output-directory` inside the container.
-The same is true for the log directory produce by the tron client 
+to `/opt/graphsense/data` inside the container.
+Logs are stored in the log directory created by the tron client 
 which resides in `/home/dockeruser/logs` and is by default mapped
 to `./logs/`. To override these settings 
 a Docker Compose override file can be used, e.g.
@@ -30,8 +30,8 @@ version: "3.1"
 services:
   tron-client:
     volumes:
-      - /var/data/graphsense/clients/btc:/home/dockeruser/output-directory
-      - /var/data/graphsense/clients/btc:/home/dockeruser/logs
+      - ./data:/opt/graphsense/data
+      - ./logs:/home/dockeruser/logs
 ```
 
 The data directory on the host system must be writeable by user `dockeruser`.
@@ -49,6 +49,15 @@ Starting the container (in detached mode):
 Showing log information:
 
     docker-compose logs
+
+## Fetch from docker
+
+To receive the image via the github docker hub run:
+```bash
+docker pull ghcr.io/graphsense/trx-client
+
+```
+
 
 
 [tron]: https://tron.network/
