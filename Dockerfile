@@ -16,7 +16,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
         wget && \
     useradd -m -r -u $UID -d /opt/graphsense dockeruser &&  \
     mkdir -p /opt/graphsense/data && \
-    chown -R dockeruser /opt/graphsenseq
+    chown -R dockeruser /opt/graphsense
 
 USER dockeruser
 RUN wget https://github.com/tronprotocol/java-tron/releases/download/GreatVoyage-v4.7.3/FullNode.jar -O /opt/graphsense/FullNode.jar
