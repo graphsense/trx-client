@@ -11,8 +11,8 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - ./data/:/opt/graphsense/data:Z
-      - ./conf/main_net_config.conf:/opt/graphsense/client2.conf:Z
-      - ./logs/:/home/dockeruser/logs:Z
+      - ./conf/main_net_config.conf:/opt/graphsense/client.conf:Z
+      - ./logs/:/opt/graphsense/logs:Z
     ports:
       - 50545:50545
       - 50555:50555

@@ -19,7 +19,7 @@ Client data is persisted on the host machine using a Docker volume.
 In the default setting the local directory `./data` is mapped to
 to `/opt/graphsense/data` inside the container.
 Logs are stored in the log directory created by the tron client 
-which resides in `/home/dockeruser/logs` and is by default mapped
+which resides in `/opt/graphsense/logs` and is by default mapped
 to `./logs/`. To override these settings 
 a Docker Compose override file can be used, e.g.
 
@@ -31,10 +31,10 @@ services:
   tron-client:
     volumes:
       - ./data:/opt/graphsense/data
-      - ./logs:/home/dockeruser/logs
+      - ./logs:/opt/graphsense/logs
 ```
 
-The data directory on the host system must be writeable by user `dockeruser`.
+The data directory on the host system must be writeable by user `dockeruser`. To provide your own customized java-tron config, just map it at ```/opt/graphsense/client.conf```.
 
 ## Usage
 
