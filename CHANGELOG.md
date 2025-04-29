@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [25.04.0] - 2025-04-29
+### Changed
+- bump version v4.7.7 -> v4.8.0
+
 ## [25.01.0] - 2025-01-22
 ### Changed
 - bump version v4.7.6 -> v4.7.7
