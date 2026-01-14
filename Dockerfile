@@ -19,7 +19,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     chown -R dockeruser /opt/graphsense
 
 USER dockeruser
-RUN wget https://github.com/tronprotocol/java-tron/releases/download/GreatVoyage-v4.8.0/FullNode.jar -O /opt/graphsense/FullNode.jar
+RUN wget https://github.com/tronprotocol/java-tron/releases/download/GreatVoyage-v4.8.0.1/FullNode.jar -O /opt/graphsense/FullNode.jar
 ENV LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libtcmalloc.so.4"
 ENV TCMALLOC_RELEASE_RATE=10
 ADD conf/main_net_config.conf /opt/graphsense/client.conf
